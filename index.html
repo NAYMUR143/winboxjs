@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>WinBox.js</title>
+    <link rel="stylesheet" href="css/winbox.min.css" />
+    <link rel="stylesheet" href="css/themes/modern.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="margin-bottom: 0">
+        <img src="img/winbox-gradient.svg" width="2400" height="811" />
+      </h1>
+
+      <div
+        class="button"
+        onclick="window.examples['theme-modern']()"
+        style="background-color: #ca00b4"
+      >
+        Click me
+      </div>
+      <br /><br />
+      <div class="button" onclick="window.examples['iframe']()">Url link</div>
+      <br /><br />
+      <div id="backstore" style="display: none">
+        <div id="content">
+          <h1>My Heading</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+            no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+            dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+            voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+            dolor sit amet.
+          </p>
+          <p>
+            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+            molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+            vero eros et accumsan et iusto odio dignissim qui blandit praesent
+            luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+            volutpat.
+          </p>
+          <p>
+            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+            suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis
+            autem vel eum iriure dolor in hendrerit in vulputate velit esse
+            molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+            vero eros et accumsan et iusto odio dignissim qui blandit praesent
+            luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/winbox.min.js"></script>
+    <script>
+      (function () {
+        let winbox;
+
+        window.examples = {
+          iframe: function () {
+            new WinBox("WinBox.js", {
+              url: "https://lucid-kirch-d5e37c.netlify.app/",
+              class: "iframe",
+            });
+          },
+
+          "theme-modern": function () {
+            new WinBox("New Look", {
+              class: "modern",
+              mount: document.getElementById("content").cloneNode(true),
+            });
+          },
+        };
+      })();
+    </script>
+  </body>
+</html>
